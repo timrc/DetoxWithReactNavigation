@@ -49,3 +49,10 @@ export function resetFlow(scene, params) {
         ],
     };
 }
+
+export function changeFlow(flow) {
+    return {
+        type: 'CHANGE_FLOW',
+        flow,
+    }
+}

@@ -14,34 +14,17 @@ import {
 
 // Modules
 import { connect } from 'react-redux';
+import Intro from '../view/Intro';
 
 // Actions
-import { navigate, resetFlow } from '../actions';
+import { navigate, resetFlow, changeFlow } from '../actions';
 
 type Props = {};
 class App extends Component<Props> {
     render() {
         return (
             <View style={styles.container} testID={'app'}>
-                <Text style={styles.welcome} testID={'app:welcome'}>
-                    Welcome to App!!
-                </Text>
-                <Button
-                    onPress={() => {
-                        this.props.navigate({
-                            scene: 'AppFoo',
-                        })
-                    }}
-                    testID={'app:button.foo'}
-                    title={'Go to Page Foo'}
-                />
-                <Button
-                    onPress={() => {
-                        this.props.resetFlow('DemoRoot')
-                    }}
-                    testID={'app:button.demo'}
-                    title={'Go to Demo Flow'}
-                />
+                <Intro />
             </View>
         );
     }
@@ -73,6 +56,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
     navigate,
     resetFlow,
+    changeFlow,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

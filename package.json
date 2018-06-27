@@ -18,7 +18,8 @@
     "react-navigation-redux-helpers": "^1.0.5",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.0"
   },
   "devDependencies": {
     "babel-jest": "23.2.0",
@@ -38,7 +39,11 @@
         "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/Demo.app",
         "build": "xcodebuild -project ios/Demo.xcodeproj -scheme Demo -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
-        "name": "iPhone 7 Plus"
+        "name": "iPhone 7 Plus",
+        "session": {
+          "server": "ws://localhost:8099",
+          "sessionId": "Demo"
+        }
       }
     }
   }

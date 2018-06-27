@@ -16,7 +16,7 @@ import {
 import { connect } from 'react-redux';
 
 // Actions
-import { back, reset, resetFlow } from '../actions';
+import { back, reset, resetFlow, changeFlow } from '../actions';
 
 type Props = {};
 class AppFoo extends Component<Props> {
@@ -42,7 +42,7 @@ class AppFoo extends Component<Props> {
                 />
                 <Button
                     onPress={() => {
-                        this.props.resetFlow('DemoRoot')
+                        this.props.changeFlow('DemoRoot')
                     }}
                     testID={'app.foo:button.demo'}
                     title={'Go to Demo Flow'}
@@ -79,6 +79,7 @@ const mapDispatchToProps = {
     back,
     reset,
     resetFlow,
+    changeFlow,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppFoo);
